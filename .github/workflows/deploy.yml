@@ -1,9 +1,10 @@
 name: Deploy Vite to Vercel
 
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
-      - master # Or your primary branch like 'master'
+      - master
 
 jobs:
   deploy:
