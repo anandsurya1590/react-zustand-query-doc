@@ -27,6 +27,7 @@ body {
 /* Layout */
 .docs-layout {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -127,7 +128,6 @@ body {
   flex: 1;
   margin-left: var(--sidebar-width);
   padding: 40px 60px;
-  max-width: 900px;
 }
 
 .page h1 {
