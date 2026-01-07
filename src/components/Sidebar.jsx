@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const navigation = [
   {
@@ -36,11 +37,23 @@ const navigation = [
 ];
 
 export default function Sidebar() {
+  const [version, setVersion] = useState("loading...");
+
+   useEffect(() => {
+    fetch(
+      "https://raw.githubusercontent.com/anandsurya1590/zustand-query/main/package.json"
+    )
+      .then(res => res.json())
+      .then(pkg => setVersion(pkg.version))
+      .catch(() => setVersion("unknown"));
+  }, []);
+
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
-        <h1>react-zustand-query</h1>
-        <span className="version">v1.0.6</span>
+        <img src="/logo.png" alt="React Zustand Query Logo" className="logo" />
+        <h1>React Zustand Query</h1>
+        <span className="version">{version}</span>
       </div>
       <nav className="sidebar-nav">
         {navigation.map((section) => (
@@ -72,7 +85,7 @@ export default function Sidebar() {
           NPM Package
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/anandsurya1590/zustand-query"
           target="_blank"
           rel="noopener noreferrer"
         >

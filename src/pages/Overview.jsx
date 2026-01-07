@@ -19,7 +19,7 @@ function UserProfile() {
 export default function Overview() {
   return (
     <div className="page">
-      <h1>react-zustand-query</h1>
+      <h1>React Zustand Query</h1>
       <p className="lead">
         A lightweight, powerful data fetching and caching library for React,
         powered by Zustand state management.
